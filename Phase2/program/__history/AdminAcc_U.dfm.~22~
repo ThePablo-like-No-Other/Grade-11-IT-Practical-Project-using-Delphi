@@ -1,0 +1,263 @@
+object frmAdminAcc: TfrmAdminAcc
+  Left = 0
+  Top = 0
+  Caption = 'Import Accounts'
+  ClientHeight = 653
+  ClientWidth = 888
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 176
+    Top = 56
+    Width = 37
+    Height = 13
+    Caption = 'Label1'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 577
+    Top = 489
+    Width = 68
+    Height = 13
+    Caption = 'account Name'
+  end
+  object Label3: TLabel
+    Left = 665
+    Top = 513
+    Width = 12
+    Height = 13
+    Caption = 'Or'
+  end
+  object Label4: TLabel
+    Left = 748
+    Top = 535
+    Width = 3
+    Height = 13
+  end
+  object Label10: TLabel
+    Left = 734
+    Top = 535
+    Width = 41
+    Height = 13
+    Caption = 'surname'
+  end
+  object Label11: TLabel
+    Left = 560
+    Top = 530
+    Width = 26
+    Height = 13
+    Caption = 'name'
+  end
+  object dbgplayers: TDBGrid
+    Left = 8
+    Top = 87
+    Width = 721
+    Height = 225
+    DataSource = dmPlayers.dsplayers
+    ReadOnly = True
+    TabOrder = 0
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+  end
+  object dbn1: TDBNavigator
+    Left = 8
+    Top = 318
+    Width = 400
+    Height = 57
+    DataSource = dmPlayers.dsplayers
+    TabOrder = 1
+  end
+  object pnlACCName: TPanel
+    Left = 8
+    Top = 8
+    Width = 113
+    Height = 33
+    Caption = 'Account ame'
+    TabOrder = 2
+  end
+  object Panel2: TPanel
+    Left = 127
+    Top = 8
+    Width = 114
+    Height = 33
+    Caption = 'pnl'
+    TabOrder = 3
+  end
+  object Panel3: TPanel
+    Left = 88
+    Top = 47
+    Width = 57
+    Height = 34
+    Caption = 'User :'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 4
+  end
+  object Button1: TButton
+    Left = 747
+    Top = 8
+    Width = 75
+    Height = 25
+    Caption = 'Log Out'
+    TabOrder = 5
+    OnClick = Button1Click
+  end
+  object Button2: TButton
+    Left = 747
+    Top = 103
+    Width = 100
+    Height = 57
+    Caption = 'Add New Account'
+    TabOrder = 6
+  end
+  object btnlocate: TButton
+    Left = 747
+    Top = 166
+    Width = 100
+    Height = 57
+    Caption = 'Search For Account'
+    TabOrder = 7
+  end
+  object Edit1: TEdit
+    Left = 665
+    Top = 486
+    Width = 121
+    Height = 21
+    TabOrder = 8
+    Text = 'Edit1'
+  end
+  object Edit2: TEdit
+    Left = 601
+    Top = 532
+    Width = 121
+    Height = 21
+    TabOrder = 9
+    Text = 'Edit2'
+  end
+  object Edit3: TEdit
+    Left = 768
+    Top = 532
+    Width = 121
+    Height = 21
+    TabOrder = 10
+    Text = 'Edit3'
+  end
+  object Button8: TButton
+    Left = 724
+    Top = 567
+    Width = 75
+    Height = 25
+    Caption = 'search Result'
+    TabOrder = 11
+  end
+  object Panel7: TPanel
+    Left = 577
+    Top = 439
+    Width = 185
+    Height = 41
+    Caption = 'search'
+    TabOrder = 12
+  end
+  object Button10: TButton
+    Left = 768
+    Top = 448
+    Width = 75
+    Height = 25
+    Caption = 'cancel'
+    TabOrder = 13
+  end
+  object Button11: TButton
+    Left = 735
+    Top = 319
+    Width = 100
+    Height = 53
+    Caption = 'Record Summory'
+    TabOrder = 14
+  end
+  object Button12: TButton
+    Left = 625
+    Top = 567
+    Width = 75
+    Height = 25
+    Caption = 'begin Edit'
+    TabOrder = 15
+  end
+  object Button13: TButton
+    Left = 735
+    Top = 229
+    Width = 109
+    Height = 73
+    Caption = 'Multy Account Delete'
+    TabOrder = 16
+  end
+  object Button14: TButton
+    Left = 440
+    Top = 324
+    Width = 97
+    Height = 48
+    Caption = 'Import Accounts'
+    TabOrder = 17
+  end
+  object Button15: TButton
+    Left = 543
+    Top = 324
+    Width = 97
+    Height = 48
+    Caption = 'Export Accounts'
+    TabOrder = 18
+  end
+  object btnsort: TButton
+    Left = 8
+    Top = 416
+    Width = 81
+    Height = 25
+    Caption = 'Sort Records By'
+    TabOrder = 19
+    OnClick = btnsortClick
+  end
+  object Button5: TButton
+    Left = 240
+    Top = 416
+    Width = 75
+    Height = 25
+    Caption = 'Filter'
+    TabOrder = 20
+  end
+  object Button6: TButton
+    Left = 333
+    Top = 416
+    Width = 75
+    Height = 25
+    Caption = 'cancel'
+    TabOrder = 21
+  end
+  object btnSortDisable: TButton
+    Left = 103
+    Top = 416
+    Width = 75
+    Height = 25
+    Caption = 'Diable Sorting'
+    TabOrder = 22
+    Visible = False
+    OnClick = btnSortDisableClick
+  end
+end

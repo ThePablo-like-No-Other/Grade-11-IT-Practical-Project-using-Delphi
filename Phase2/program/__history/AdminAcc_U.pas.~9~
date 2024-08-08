@@ -1,0 +1,83 @@
+unit AdminAcc_U;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.DBCtrls,
+  Vcl.Grids, Vcl.DBGrids, Data.DB,dmplayers_U;
+
+type
+  TfrmAdminAcc = class(TForm)
+    dbgplayers: TDBGrid;
+    dbn1: TDBNavigator;
+    Panel1: TPanel;
+    Panel2: TPanel;
+    Panel3: TPanel;
+    Label1: TLabel;
+    Button1: TButton;
+    Button2: TButton;
+    btnlocate: TButton;
+    Edit1: TEdit;
+    Label2: TLabel;
+    Label3: TLabel;
+    Edit2: TEdit;
+    Edit3: TEdit;
+    Label4: TLabel;
+    Label10: TLabel;
+    Label11: TLabel;
+    Button8: TButton;
+    Panel7: TPanel;
+    Button10: TButton;
+    Button11: TButton;
+    Button12: TButton;
+    Button13: TButton;
+    Button14: TButton;
+    Button15: TButton;
+    btnFilter: TButton;
+    procedure Button1Click(Sender: TObject);
+    procedure btnFilterClick(Sender: TObject);
+  private
+    pnlpoints : TPanel;
+    btnHitoLo ,btnLotoHI : TButton;
+  public
+    { Public declarations }
+  end;
+
+var
+  frmAdminAcc: TfrmAdminAcc;
+
+implementation
+
+{$R *.dfm}
+
+uses AdminLogin_U;
+
+procedure TfrmAdminAcc.btnFilterClick(Sender: TObject);
+begin
+with frmAdminAcc do
+begin
+Height := 788;
+width := 904;
+end;
+          //panel poijnt crate
+          pnlpoints := Tpanel.Create(frmAdminAcc);
+          pnlpoints.Parent :=frmAdminAcc;
+          with pnlpoints do
+          begin
+          Name := 'pnlpoints';
+          caption :='';
+          top :=740;
+          left := 88;
+          width :=89;
+          height:=169  ;
+          end;
+end;
+
+procedure TfrmAdminAcc.Button1Click(Sender: TObject);
+begin
+frmAdminAcc.Visible:= False;
+frmAdminLogin.visible:= True;
+end;
+
+end.

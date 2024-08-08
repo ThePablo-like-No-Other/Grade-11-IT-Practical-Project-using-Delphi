@@ -1,0 +1,34 @@
+unit U_loginforusers;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls;
+
+type
+  Tfrm1UserLogin = class(TForm)
+    edtloginusernameoremail: TEdit;
+    Panel1: TPanel;
+    btnEnter: TButton;
+    edtloginpassword: TEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    lblOr: TLabel;
+    Button2: TButton;
+    Button3: TButton;
+    Panel2: TPanel;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frm1UserLogin: Tfrm1UserLogin;
+
+implementation
+
+{$R *.dfm}
+
+end.

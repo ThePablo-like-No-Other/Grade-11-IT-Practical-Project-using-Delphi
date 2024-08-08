@@ -1,0 +1,138 @@
+unit AdminAcc_U;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.DBCtrls,
+  Vcl.Grids, Vcl.DBGrids, Data.DB,dmplayers_U;
+
+type
+  TfrmAdminAcc = class(TForm)
+    dbgplayers: TDBGrid;
+    dbn1: TDBNavigator;
+    Panel1: TPanel;
+    Panel2: TPanel;
+    Panel3: TPanel;
+    Label1: TLabel;
+    Button1: TButton;
+    Button2: TButton;
+    btnlocate: TButton;
+    Edit1: TEdit;
+    Label2: TLabel;
+    Label3: TLabel;
+    Edit2: TEdit;
+    Edit3: TEdit;
+    Label4: TLabel;
+    Label10: TLabel;
+    Label11: TLabel;
+    Button8: TButton;
+    Panel7: TPanel;
+    Button10: TButton;
+    Button11: TButton;
+    Button12: TButton;
+    Button13: TButton;
+    Button14: TButton;
+    Button15: TButton;
+    btnsort: TButton;
+    Button5: TButton;
+    Button6: TButton;
+    Panel4: TPanel;
+    lnlpionts: TLabel;
+    Button3: TButton;
+    Button4: TButton;
+    btnSortDisable: TButton;
+    procedure Button1Click(Sender: TObject);
+    procedure btnsortClick(Sender: TObject);
+    procedure btnSortDisableClick(Sender: TObject);
+  private
+    pnlpoints : TPanel;
+    btnHitoLo ,btnLotoHI : TButton;
+    lblPoints:Tlabel;
+    procedure sortHightolowPoints(Sender:Tobject);
+  public
+    { Public declarations }
+  end;
+
+var
+  frmAdminAcc: TfrmAdminAcc;
+
+implementation
+
+{$R *.dfm}
+
+uses AdminLogin_U;
+
+procedure TfrmAdminAcc.btnsortClick(Sender: TObject);
+begin
+btnSortDisable.Visible:=True;
+with frmAdminAcc do
+  begin
+  Height := 788;
+  end;
+          //panel point create
+          pnlpoints := Tpanel.Create(frmAdminAcc);
+          pnlpoints.Parent := frmAdminAcc;
+          with pnlpoints do
+          begin
+          Name := 'pnlpoint';
+          caption :='';
+          top := 447;
+          left := 8;
+          width :=175;
+          height:=65 ;
+          //visible:=true
+          end;
+
+          //label creat
+          lblPoints := Tlabel.Create(pnlpoints);
+          lblPoints.Parent :=pnlpoints;
+          with lblPoints do
+          begin
+          Name := 'lblPoint';
+          caption :='BY Points';
+          top :=8;
+          left := 2;
+          width :=44;
+          height:=13;
+          end;
+
+   //buton hi to lo
+          btnHitoLo := Tbutton.Create(frmAdminAcc);
+          btnHitoLo.Parent :=pnlpoints;
+          with btnHitoLo do
+          begin
+          Name := 'btnHitoLo';
+          caption :='High to low';
+          top :=27;
+          left := 2;
+          width :=75;
+          height:=25  ;
+          onclick:= sortHightolowPoints;
+          end;
+end;
+
+procedure TfrmAdminAcc.btnSortDisableClick(Sender: TObject);
+begin
+     btnHitoLo.Free;
+     pnlpoints.Free;
+dmplayers.tblplayers.Sort:='AccountNumber ASC';
+btnSortDisable.Visible:=False;
+end;
+
+procedure TfrmAdminAcc.Button1Click(Sender: TObject);
+begin
+frmAdminAcc.Visible:= False;
+frmAdminLogin.visible:= True;
+end;
+
+procedure TfrmAdminAcc.sortHightolowPoints(Sender: Tobject);
+begin
+with dmplayers.tblplayers do
+      begin
+  filtered:=False;
+ sort:='Points DESC';
+      end;
+end;
+
+end.

@@ -1,0 +1,89 @@
+object dmPlayers: TdmPlayers
+  OldCreateOrder = True
+  Height = 150
+  Width = 215
+  object conplayers: TADOConnection
+    Connected = True
+    ConnectionString = 
+      'Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\Family\Doc' +
+      'uments\P NNeko Grade 11 PAT 2019\Phase2\program\Player Acounts.m' +
+      'db;Persist Security Info=False'
+    LoginPrompt = False
+    Mode = cmShareDenyNone
+    Provider = 'Microsoft.Jet.OLEDB.4.0'
+    Left = 24
+    Top = 24
+  end
+  object tblplayers: TADOTable
+    Active = True
+    Connection = conplayers
+    CursorType = ctStatic
+    LockType = ltReadOnly
+    TableDirect = True
+    TableName = 'card game DataBase'
+    Left = 88
+    Top = 96
+    object tblplayersAccountnumber: TIntegerField
+      FieldName = 'Accountnumber'
+    end
+    object tblplayersName: TWideStringField
+      FieldName = 'Name'
+      Size = 255
+    end
+    object tblplayerssurname: TWideStringField
+      FieldName = 'surname'
+      Size = 255
+    end
+    object tblplayersAccountname: TWideStringField
+      FieldName = 'Accountname'
+      Size = 255
+    end
+    object tblplayersGrade: TIntegerField
+      FieldName = 'Grade'
+    end
+    object tblplayersSchool: TWideStringField
+      FieldName = 'School'
+      Size = 255
+    end
+    object tblplayersLevelofplayerorRank: TIntegerField
+      FieldName = 'LevelofplayerorRank'
+    end
+    object tblplayersPoints: TIntegerField
+      FieldName = 'Points'
+    end
+    object tblplayersAchievments: TWideStringField
+      FieldName = 'Achievments'
+      Size = 255
+    end
+    object tblplayersPassword: TWideStringField
+      FieldName = 'Password'
+      Size = 255
+    end
+    object tblplayersEmail: TWideStringField
+      FieldName = 'Email'
+      Size = 255
+    end
+    object tblplayerscellNumber: TWideStringField
+      FieldName = 'cellNumber'
+      Size = 255
+    end
+    object tblplayersSpecialCard: TWideStringField
+      FieldName = 'SpecialCard'
+      Size = 255
+    end
+    object tblplayersMatchesWon: TIntegerField
+      FieldName = 'MatchesWon'
+    end
+    object tblplayersMatchesLost: TIntegerField
+      FieldName = 'MatchesLost'
+    end
+    object tblplayersAmountOfCardsContained: TIntegerField
+      FieldName = 'AmountOfCardsContained'
+    end
+  end
+  object dsplayers: TDataSource
+    DataSet = tblplayers
+    Left = 152
+    Top = 40
+  end
+end

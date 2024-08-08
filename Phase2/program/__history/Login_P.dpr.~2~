@@ -1,0 +1,18 @@
+program Login_P;
+
+uses
+  Vcl.Forms,
+  Login_U in 'Login_U.pas' {frmLogin},
+  AdminLogin_U in 'AdminLogin_U.pas' {frmAdminLogin},
+  CreateAccount_U in 'CreateAccount_U.pas' {frmCreateAccount};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TfrmLogin, frmLogin);
+  Application.CreateForm(TfrmAdminLogin, frmAdminLogin);
+  Application.CreateForm(TfrmCreateAccount, frmCreateAccount);
+  Application.Run;
+end.

@@ -1,0 +1,16 @@
+program P_loginforusers;
+
+uses
+  Vcl.Forms,
+  U_loginforusers in 'U_loginforusers.pas' {frm1UserLogin},
+  DmAccounts_U in 'DmAccounts_U.pas' {DmAccounts: TDataModule};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(Tfrm1UserLogin, frm1UserLogin);
+  Application.CreateForm(TDmAccounts, DmAccounts);
+  Application.Run;
+end.

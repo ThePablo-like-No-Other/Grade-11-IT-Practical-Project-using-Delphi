@@ -1,0 +1,25 @@
+unit frmEditAccounts_U;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs,dmplayers_U, Vcl.ExtCtrls;
+
+type
+  TfrmEditAccounts = class(TForm)
+    Panel1: TPanel;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmEditAccounts: TfrmEditAccounts;
+
+implementation
+
+{$R *.dfm}
+
+end.
